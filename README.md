@@ -4,7 +4,7 @@ Official implementation of **GeoRect4D: Geometry-Compatible Generative Rectifica
 
 Zhenlong Wu, [Zihan Zheng](https://zihanzheng-sjtu.github.io/), Xuanxuan Wang, Qianhe Wang, Hua Yang, Xiaoyun Zhang, [Qiang Hu](https://qianghu-huber.github.io/qianghuhomepage/), Wenjun Zhang
 
-[Project Page](https://mediax-sjtu.github.io/GeoRect4D/) | [arXiv](https://arxiv.org/abs/2604.20784) | [Dataset](#)
+[Project Page](#) | [arXiv](https://arxiv.org/abs/2604.20784) | [Dataset](#)
 
 <p align="center">
   <img src="docs/assets/fig2.png" width="95%">
