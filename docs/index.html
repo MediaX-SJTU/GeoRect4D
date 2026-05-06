@@ -1,1 +1,244 @@
-projectpage
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoRect4D Project Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 { text-align: center; font-weight: normal; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: bold; }
+        h2 { font-size: 1.8em; margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        h3 { font-size: 1.3em; margin-bottom: 15px; color: #444; }
+        
+        .conference { text-align: center; color: #d9534f; font-size: 1.2em; margin-bottom: 15px; }
+        .authors { text-align: center; font-size: 1.1em; color: #0056b3; margin-bottom: 20px; }
+        .links { text-align: center; margin-bottom: 40px; }
+        .link-btn {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9em;
+            background-color: #f9f9f9;
+            transition: all 0.2s;
+        }
+        .link-btn:hover { background-color: #e9e9e9; border-color: #999; }
+
+ 
+        .video-container { text-align: center; margin-bottom: 30px; }
+     
+        .video-container video { max-width: 800px; width: 100%; border-radius: 8px; margin: 0 auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        
+        .image-container { text-align: center; margin-bottom: 30px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; }
+        
+    
+        .abstract-text { text-align: justify; font-size: 1em; color: #555; margin-bottom: 40px; padding: 0 20px; }
+        .figure-caption { text-align: justify; font-size: 0.95em; color: #666; margin: 15px 20px 0 20px; line-height: 1.5; }
+        .figure-wrapper { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px dashed #eaeaea; }
+        .figure-wrapper:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+      
+        .comparison-section { margin-top: 40px; }
+        .scene-selector { text-align: center; margin-bottom: 20px; }
+        .scene-btn {
+            padding: 10px 20px; margin: 0 5px 10px 5px;
+            border: 1px solid #ccc; background: #fff; cursor: pointer; border-radius: 5px;
+        }
+        .scene-btn.active { background: #0056b3; color: #fff; border-color: #0056b3; }
+        
+        .video-comparison { display: flex; gap: 15px; justify-content: center; }
+        .video-box { flex: 1; text-align: center; position: relative; }
+        .video-box video { width: 100%; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .video-label { position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.7); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.9em; font-weight: bold;}
+
+ 
+        .section-divider { border: 0; border-top: 2px dashed #ddd; margin: 40px 0; }
+
+        /* BibTeX */
+        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; font-size: 0.9em; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>GeoRect4D: Geometry-Compatible Generative Rectification for Dynamic Sparse-View 3D Reconstruction</h1>
+    <div class="authors">
+        Zhenlong Wu, Zihan Zheng, Xuanxuan Wang, Qianhe Wang, Hua Yang, Xiaoyun Zhang, Qiang Hu, Wenjun Zhang
+    </div>
+
+    <div class="links">
+        <a href="https://arxiv.org/abs/2604.20784" class="link-btn">📄 arXiv</a>
+        <a href="https://github.com/MediaX-SJTU/GeoRect4D" class="link-btn">💻 Code</a>
+        <a href="#" class="link-btn">💾 Data</a>
+    </div>
+
+    <h2>Video</h2>
+    <div class="video-container">
+        <video controls poster="./assets/frame0.png">
+            <source src="./assets/project.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h2>Abstract</h2>
+    <div class="abstract-text">
+        <p>Reconstructing dynamic 3D scenes from sparse multi-view videos is highly ill-posed, often leading to geometric collapse, trajectory drift, and floating artifacts. Recent attempts introduce generative priors to hallucinate missing content, yet naive integration frequently causes structural drift and temporal inconsistency due to the mismatch between stochastic 2D generation and deterministic 3D geometry. In this paper, we propose GeoRect4D, a novel unified framework for sparse-view dynamic reconstruction that couples explicit 3D consistency with generative refinement via a closed-loop optimization process. Specifically, GeoRect4D introduces a degradation-aware feedback mechanism that incorporates a robust anchor-based dynamic 3DGS substrate with a single-step diffusion rectifier to hallucinate high-fidelity details. This rectifier utilizes a structural locking mechanism and spatiotemporal coordinated attention, effectively preserving physical plausibility while restoring missing content. Furthermore, we present a progressive optimization strategy that employs stochastic geometric purification to eliminate floaters and generative distillation to infuse texture details into the explicit representation. Extensive experiments demonstrate that GeoRect4D achieves state-of-the-art performance in reconstruction fidelity, perceptual quality, and spatiotemporal consistency across multiple datasets.</p>
+    </div>
+
+    <h2>Framework Overview</h2>
+    <div class="image-container">
+        <img src="./assets/fig2.png" alt="Framework Overview">
+        <p class="figure-caption"><strong>Overview of GeoRect4D.</strong> Left: Sparse inputs are adaptively decomposed into a static base and an anchor-controlled dynamic field to construct the base dynamic 3DGS model. Top Right: A degradation-aware, single-step diffusion prior synthesizes high-fidelity rectified views from coarse renderings. Bottom Right: A two-stage progressive optimization framework first applies geometric purification to stabilize the substrate, then performs generative distillation to seamlessly integrate hallucinated details with strict physical fidelity.</p>
+    </div>
+
+    <h2>Comparisons to Baseline Methods</h2>
+    <div class="comparison-section">
+        
+        <h3>Extremely sparse and complex motion scenes</h3>
+        <div class="video-comparison">
+            <div class="video-box">
+                <video autoplay loop muted playsinline>
+                    <source src="./assets/cba-rot.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Baseline</div>
+            </div>
+            <div class="video-box">
+                <video autoplay loop muted playsinline>
+                    <source src="./assets/cba-rot-ours.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Ours</div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>More scenario examples</h3>
+        <div class="scene-selector" id="scene-selector">
+            <button class="scene-btn active" onclick="changeScene('scene1')">Scene 1</button>
+            <button class="scene-btn" onclick="changeScene('scene2')">Scene 2</button>
+            <button class="scene-btn" onclick="changeScene('scene3')">Scene 3</button>
+            <button class="scene-btn" onclick="changeScene('scene4')">Scene 4</button>
+            <button class="scene-btn" onclick="changeScene('scene5')">Scene 5</button>
+            <button class="scene-btn" onclick="changeScene('scene6')">Scene 6</button>
+        </div>
+
+        <div class="video-comparison">
+            <div class="video-box">
+                <video id="baseline-video" autoplay loop muted playsinline>
+                    <source src="./assets/cba.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Baseline</div>
+            </div>
+            <div class="video-box">
+                <video id="ours-video" autoplay loop muted playsinline>
+                    <source src="./assets/cba-ours.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Ours</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>More Qualitative Comparison</h2>
+    <div class="image-container">
+        
+        <div class="figure-wrapper">
+            <img src="./assets/fig4.png" alt="Comparison 1">
+            <p class="figure-caption"><strong>Qualitative Comparison 1:</strong> Visual comparison with baseline methods. GeoRect4D effectively suppresses erroneous floaters and recovers sharp structural boundaries and high-frequency details.</p>
+        </div>
+
+        <div class="figure-wrapper">
+            <img src="./assets/fig6.png" alt="Comparison 2">
+            <p class="figure-caption"><strong>Qualitative Comparison 2:</strong> More Qualitative comparison on more sequences of the N3DV dataset.</p>
+        </div>
+
+        <div class="figure-wrapper">
+            <img src="./assets/fig7.png" alt="Qualitative Comparison 3">
+            <p class="figure-caption"><strong>Qualitative Comparison 3:</strong> More Qualitative comparison on more sequences of the MeetRoom dataset.</p>
+        </div>
+
+    </div>
+
+    <h2>BibTeX</h2>
+    <pre><code>@misc{wu2026georect4dgeometrycompatiblegenerativerectification,
+      title={GeoRect4D: Geometry-Compatible Generative Rectification for Dynamic Sparse-View 3D Reconstruction}, 
+      author={Zhenlong Wu and Zihan Zheng and Xuanxuan Wang and Qianhe Wang and Hua Yang and Xiaoyun Zhang and Qiang Hu and Wenjun Zhang},
+      year={2026},
+      eprint={2604.20784},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.20784}, 
+}</code></pre>
+
+</div>
+
+<script>
+   
+    const sceneData = {
+        'scene1': {
+            baseline: './assets/cba.mp4',
+            ours: './assets/cba-ours.mp4'
+        },
+        'scene2': {
+            baseline: './assets/coffee.mp4',
+            ours: './assets/coffee-ours.mp4'
+        },
+        'scene3': {
+            baseline: './assets/steak.mp4',
+            ours: './assets/steak-ours.mp4'
+        },
+        'scene4': {
+            baseline: './assets/discussion.mp4',
+            ours: './assets/discussion-ours.mp4'
+        },
+        'scene5': {
+            baseline: './assets/trimming.mp4',
+            ours: './assets/trimming-ours.mp4'
+        },
+        'scene6': {
+            baseline: './assets/sear.mp4',
+            ours: './assets/sear-ours.mp4'
+        }
+    };
+
+    function changeScene(sceneId) {
+        
+        const buttons = document.querySelectorAll('.scene-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        
+        const baselineVid = document.getElementById('baseline-video');
+        const oursVid = document.getElementById('ours-video');
+
+        
+        baselineVid.src = sceneData[sceneId].baseline;
+        oursVid.src = sceneData[sceneId].ours;
+        
+        baselineVid.load();
+        baselineVid.play();
+        oursVid.load();
+        oursVid.play();
+    }
+</script>
+
+</body>
+</html>
+
